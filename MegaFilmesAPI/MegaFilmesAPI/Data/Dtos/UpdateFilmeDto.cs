@@ -1,13 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MegaFilmesAPI.Models;
+namespace MegaFilmesAPI.Data.Dtos;
 
-public class Filme 
+public class UpdateFilmeDto
 {
-    [Key]
-    [Required]
-    public int Id { get; internal set; }
-
     [Required(ErrorMessage = "O nome do filme é obrigatório")]
     public string Nome { get; set; }
 
@@ -19,16 +15,4 @@ public class Filme
 
     [Required(ErrorMessage = "O diretor do filme é obrigatório")]
     public string Diretor { get; set; }
-
-    [Required]
-    public string Genero { get; set; }
-
-    public Filme (string nome, string descricao, int ano, string diretor, string genero)
-    {
-        Nome = nome.Trim();
-        Descricao = descricao.Trim();
-        Ano = ano;
-        Diretor = diretor.Trim();
-        Genero = genero.Trim();
-    }
 }
