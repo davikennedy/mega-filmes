@@ -26,20 +26,32 @@ public class FilmeController : ControllerBase
     }
 
     [HttpGet]
-    public IEnumerable<Filme> RecuperarFilmes()
+    public IEnumerable<Filme> RecuperarFilmes([FromQuery] int skip = 0, [FromQuery] int take = 10)
     {
-        return _filmes;
+        return _filmes.Skip(skip).Take(take);
+    }
+
+    [HttpGet("{id}")]
+    public IActionResult RecuperarFilmePorId(int id)
+    {
+        var filme = _filmes.FirstOrDefault(filme => filme.Id == id);
+        
+        if(filme != null)
+        {
+            //ReadFilmeDto filmeDto = _mapper.Map<ReadFilmeDto>(filme);
+            return Ok(filme);
+        }
+        return NotFound();
     }
 
     [HttpPut ("{id}")]
-
     public IActionResult AtualizarFilme(int id, [FromBody] UpdateFilmeDto filmeDto)
     {
         var filme = _filmes.FirstOrDefault(filme => filme.Id == id);
         if (filme == null) return NotFound();
 
         //_mapper.Map(filmeDto, filme);
-        // _context.SaveChanges();
+        //_context.SaveChanges();
 
          return NoContent(); 
     }
