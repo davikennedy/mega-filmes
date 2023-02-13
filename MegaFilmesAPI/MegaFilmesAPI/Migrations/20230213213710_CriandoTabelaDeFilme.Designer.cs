@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MegaFilmesAPI.Migrations
 {
     [DbContext(typeof(FilmeContext))]
-    [Migration("20230213202035_CriandoTabelaDeFilme")]
+    [Migration("20230213213710_CriandoTabelaDeFilme")]
     partial class CriandoTabelaDeFilme
     {
         /// <inheritdoc />
