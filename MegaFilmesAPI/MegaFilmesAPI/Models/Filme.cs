@@ -22,4 +22,13 @@ public class Filme
 
     [Required]
     public string Genero { get; set; }
+
+    public Filme (string nome, string descricao, int ano, string diretor, string genero)
+    {
+        Nome = nome.Trim();
+        Descricao = descricao.Trim();
+        Ano = ano;
+        Diretor = diretor.Trim();
+        Genero = genero.Trim();
+    }
 }
