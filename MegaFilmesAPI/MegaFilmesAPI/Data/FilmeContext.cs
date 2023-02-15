@@ -10,6 +10,8 @@ public class FilmeContext : DbContext
     }
 
     public DbSet<Filme> Filmes { get; set; }
-
     public DbSet<Avaliacao> Avaliacaos { get; set; }
+    public DbSet<Elenco> Elencos { get; set; }
+
+
 }

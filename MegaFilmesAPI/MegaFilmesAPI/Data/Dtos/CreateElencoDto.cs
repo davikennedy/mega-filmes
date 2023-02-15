@@ -2,7 +2,7 @@
 
 namespace MegaFilmesAPI.Data.Dtos
 {
-    public class ReadElencoDto
+    public class CreateElencoDto
     {
         [Required(ErrorMessage = "O nome do ator é obrigatório")]
         public string NameAtor { get; set; }
