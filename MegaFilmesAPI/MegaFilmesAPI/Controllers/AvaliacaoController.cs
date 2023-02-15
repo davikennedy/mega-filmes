@@ -10,11 +10,11 @@ namespace MegaFilmesAPI.Controllers;
 [Route("[controller]")]
 public class AvaliacaoController : ControllerBase
 {
-    private AvaliacaoContext _context;
+    private FilmeContext _context;
     private IMapper _mapper;
     private static int id = 0;
 
-    public AvaliacaoController(AvaliacaoContext context, IMapper mapper)
+    public AvaliacaoController(FilmeContext context, IMapper mapper)
     {
         _context = context;
         _mapper = mapper;
@@ -26,7 +26,7 @@ public class AvaliacaoController : ControllerBase
         Avaliacao avaliacao = _mapper.Map<Avaliacao>(avaliacaoDto);
         _context.Avaliacaos.Add(avaliacao);
         _context.SaveChanges();
-        return Ok(avaliacao);
+        return Ok();
     }
 }
 
