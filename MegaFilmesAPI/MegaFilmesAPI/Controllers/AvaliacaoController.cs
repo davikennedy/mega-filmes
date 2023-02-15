@@ -24,9 +24,23 @@ public class AvaliacaoController : ControllerBase
     public IActionResult AvaliaFilme( [FromBody] CreateAvaliacaoDto avaliacaoDto)
     {
         Avaliacao avaliacao = _mapper.Map<Avaliacao>(avaliacaoDto);
-        _context.Avaliacaos.Add(avaliacao);
+        _context.Avaliacoes.Add(avaliacao);
         _context.SaveChanges();
-        return Ok();
+        return CreatedAtAction(nameof(RecuperarAvaliacaoPorId), new { Id = avaliacao.Id }, avaliacao);
+    }
+
+    [HttpGet("{id}")]
+    public IActionResult RecuperarAvaliacaoPorId(int id)
+    {
+        var avaliacao = _context.Elencos.Find(id);
+
+        if (avaliacao != null)
+        {
+            ReadAvaliacaoDto avaliacaoDto = _mapper.Map<ReadAvaliacaoDto>(avaliacao);
+            return Ok();
+        }
+
+        return NotFound();
     }
 }
 
