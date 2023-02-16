@@ -25,7 +25,7 @@ public class ElencoController :ControllerBase
         Elenco elenco = _mapper.Map<Elenco>(elencoDto);
         _context.Elencos.Add(elenco);
         _context.SaveChanges();
-        return CreatedAtAction(nameof(RecuperarElencoPorId), new { Id = elenco.Id }, elenco);
+        return CreatedAtAction(nameof(RecuperarElencoPorId), new { Id = elenco.IdElenco }, elenco);
     }
 
     [HttpGet("{id}")]
