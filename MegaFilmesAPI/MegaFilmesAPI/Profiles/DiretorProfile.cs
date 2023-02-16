@@ -10,6 +10,7 @@ namespace MegaFilmesAPI.Profiles
         {
             CreateMap<CreateDiretorDto, Diretor>();
             CreateMap<Diretor, ReadDiretorDto>();
+            CreateMap<UpdateDiretorDto, Diretor>();
         }
     }
 }
