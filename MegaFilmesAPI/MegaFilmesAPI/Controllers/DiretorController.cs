@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MegaFilmesAPI.Data;
 using MegaFilmesAPI.Data.Dtos.DiretorDtos;
+using MegaFilmesAPI.Data.Dtos.FilmeDtos;
 using MegaFilmesAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -49,5 +50,18 @@ public class DiretorController : ControllerBase
         }
 
         return NotFound();
+    }
+
+    [HttpPut("{id}")]
+    public IActionResult AtualizarDiretor(int id, [FromBody] UpdateDiretorDto diretorDto)
+    {
+        var diretor = _context.Diretores.Find(id);
+
+        if (diretor == null) return NotFound();
+
+        _mapper.Map(diretorDto, diretor);
+        _context.SaveChanges();
+
+        return NoContent();
     }
 }
