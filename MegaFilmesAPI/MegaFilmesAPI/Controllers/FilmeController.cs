@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using MegaFilmesAPI.Data;
-using MegaFilmesAPI.Data.Dtos;
+using MegaFilmesAPI.Data.Dtos.FilmeDtos;
 using MegaFilmesAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

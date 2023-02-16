@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using MegaFilmesAPI.Data;
-using MegaFilmesAPI.Data.Dtos;
+using MegaFilmesAPI.Data.Dtos.AvaliacaoDtos;
 using MegaFilmesAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,7 +12,6 @@ public class AvaliacaoController : ControllerBase
 {
     private FilmeContext _context;
     private IMapper _mapper;
-    private static int id = 0;
 
     public AvaliacaoController(FilmeContext context, IMapper mapper)
     {
