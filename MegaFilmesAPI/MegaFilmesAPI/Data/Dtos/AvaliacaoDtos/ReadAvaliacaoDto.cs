@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MegaFilmesAPI.Data.Dtos
+namespace MegaFilmesAPI.Data.Dtos.AvaliacaoDtos
 {
-    public class CreateAvaliacaoDto
+    public class ReadAvaliacaoDto
     {
         [Required(ErrorMessage = " O critério é obrigatorio")]
         [Range(1, 5, ErrorMessage = "O critério deverá conter valores entre 1 a 5")]

@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MegaFilmesAPI.Data.Dtos;
+namespace MegaFilmesAPI.Data.Dtos.FilmeDtos;
 
-public class ReadFilmeDto
+public class UpdateFilmeDto
 {
     [Required(ErrorMessage = "O nome do filme é obrigatório")]
     public string Nome { get; set; }
@@ -15,7 +15,4 @@ public class ReadFilmeDto
 
     [Required(ErrorMessage = "O diretor do filme é obrigatório")]
     public string Diretor { get; set; }
-
-    [Required]
-    public string Genero { get; set; }
 }

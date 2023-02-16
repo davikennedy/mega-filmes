@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MegaFilmesAPI.Data.Dtos
+namespace MegaFilmesAPI.Data.Dtos.ElencoDtos
 {
-    public class CreateElencoDto
+    public class ReadElencoDto
     {
         [Required(ErrorMessage = "O nome do ator é obrigatório")]
         public string NameAtor { get; set; }
