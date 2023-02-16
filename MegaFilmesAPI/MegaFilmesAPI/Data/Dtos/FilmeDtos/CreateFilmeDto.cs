@@ -14,7 +14,8 @@ public class CreateFilmeDto
     public int Ano { get; set; }
 
     [Required(ErrorMessage = "O diretor do filme é obrigatório")]
-    public string Diretor { get; set; }
+    public int DiretorId { get; set; }
+    //public string Diretor { get; set; }
 
     [Required(ErrorMessage = "O gênero do filme é obrigatório")]
     public string Genero { get; set; }

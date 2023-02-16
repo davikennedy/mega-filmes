@@ -8,5 +8,10 @@ public class Diretor
     [Required]
     public int Id { get; set; }
     public string Nome { get; set; }
-    public ICollection<Filme> Filmes { get; set; }
+    public virtual ICollection<Filme> Filmes { get; set; }
+
+    public Diretor ()
+    {
+        Nome = Nome.Trim();
+    }
 }
