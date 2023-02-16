@@ -6,7 +6,7 @@ namespace MegaFilmesAPI.Models
     {
         [Key]
         [Required]
-        public int IdAtor { get; internal set; }
+        public int Id { get; internal set; }
 
         [Required(ErrorMessage = "O nome do ator é obrigatório")]
         public string NameAtor { get; set; }

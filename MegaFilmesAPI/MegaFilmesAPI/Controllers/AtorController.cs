@@ -27,7 +27,7 @@ public class AtorController : ControllerBase
         Ator ator = _mapper.Map<Ator>(atorDto);
         _context.Atores.Add(ator);
         _context.SaveChanges();
-        return CreatedAtAction(nameof(RecuperarAtorPorId), new { Id = ator.IdAtor }, ator);
+        return CreatedAtAction(nameof(RecuperarAtorPorId), new { Id = ator.Id }, ator);
     }
 
     [HttpGet("{id}")]
