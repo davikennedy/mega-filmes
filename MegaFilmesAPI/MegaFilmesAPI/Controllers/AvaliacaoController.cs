@@ -21,7 +21,7 @@ public class AvaliacaoController : ControllerBase
     }
 
     [HttpPost]
-    public IActionResult AvaliaFilme( [FromBody] CreateAvaliacaoDto avaliacaoDto)
+    public IActionResult AvaliarFilme([FromBody] CreateAvaliacaoDto avaliacaoDto)
     {
         Avaliacao avaliacao = _mapper.Map<Avaliacao>(avaliacaoDto);
         _context.Avaliacoes.Add(avaliacao);
