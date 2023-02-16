@@ -22,14 +22,20 @@ public class GeneroController :ControllerBase
     }
 
     [HttpPost]
-    public IActionResult AdicionarGenero([FromBody] CreateGeneroDto generoDto)
+    public async Task<IActionResult> AdicionarGenero([FromBody] CreateGeneroDto generoDto)
     {
         Genero genero = _mapper.Map<Genero>(generoDto);
 
-        _context.Generos.Add(genero);
-        _context.SaveChanges();
-        return CreatedAtAction(nameof(RecuperarGeneroPorId), new { id = genero.Id }, genero);
-      
+        bool novoGenero = !_context.Generos.Any(f => f.Nome.ToUpper() == genero.Nome.ToUpper());
+
+        if (novoGenero)
+        {
+            _context.Generos.Add(genero);
+            _context.SaveChanges();
+            return CreatedAtAction(nameof(RecuperarGeneroPorId), new { Id = genero.Id }, genero);
+        }
+
+        return Conflict("Já existe um gênero com mesmo nome");
     }
 
     [HttpGet]

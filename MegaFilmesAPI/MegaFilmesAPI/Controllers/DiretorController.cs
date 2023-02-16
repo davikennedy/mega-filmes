@@ -33,9 +33,9 @@ public class DiretorController : ControllerBase
     }
 
     [HttpGet]
-    public IEnumerable<Diretor> RecuperarDiretores([FromQuery] int skip = 0, [FromQuery] int take = 10)
+    public IEnumerable<ReadDiretorDto> RecuperarDiretores([FromQuery] int skip = 0, [FromQuery] int take = 10)
     {
-        return _context.Diretores.Skip(skip).Take(take);
+        return _mapper.Map<List<ReadDiretorDto>>(_context.Diretores.Skip(skip).Take(take).ToList());
     }
 
     [HttpGet("{id}")]
