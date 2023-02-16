@@ -4,14 +4,13 @@ using MegaFilmesAPI.Models;
 
 namespace MegaFilmesAPI.Profiles
 {
-    public class GeneroPerofile : Profile 
+    public class GeneroProfile : Profile 
     {
-        public GeneroPerofile()
+        public GeneroProfile()
         {
             CreateMap<CreateGeneroDto, Genero>();
             CreateMap<Genero, ReadGeneroDto>();
             CreateMap<UpdateGeneroDto, Genero>();
         }
-
     }
 }

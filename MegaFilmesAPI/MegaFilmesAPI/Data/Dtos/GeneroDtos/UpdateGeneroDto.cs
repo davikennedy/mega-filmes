@@ -4,5 +4,5 @@ namespace MegaFilmesAPI.Data.Dtos.GeneroDtos;
 
 public class UpdateGeneroDto
 {
-    public string GeneroFilme { get; set; }
+    public string Nome { get; set; }
 }

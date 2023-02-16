@@ -18,18 +18,11 @@ public class Filme
     public int Ano { get; set; }
 
     [Required]
-    public string Genero { get; set; }
+    public int GeneroId { get; set; }
 
     [Required]
     public int DiretorId { get; set; }
 
     [Required(ErrorMessage = "O diretor do filme é obrigatório")]
     public virtual Diretor Diretor { get; set; }
-
-    public Filme ()
-    {
-        Nome = Nome.Trim();
-        Descricao = Descricao.Trim();
-        Genero = Genero.Trim();
-    }
 }

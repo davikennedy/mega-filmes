@@ -5,5 +5,5 @@ namespace MegaFilmesAPI.Data.Dtos.GeneroDtos;
 public class CreateGeneroDto
 {
     [Required]
-    public string GeneroFilme { get; set; }
+    public string Nome { get; set; }
 }

@@ -15,6 +15,4 @@ public class FilmeContext : DbContext
     public DbSet<Diretor> Diretores { get; set; }
     public DbSet<Ator> Atores { get; set; }
     public DbSet<Genero> Generos { get; set; }
-
-
 }

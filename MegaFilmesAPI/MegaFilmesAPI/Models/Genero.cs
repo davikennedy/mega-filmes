@@ -7,12 +7,12 @@ public class Genero
     [Key]
     [Required]
     public int Id { get; set; }
-    public string GeneroFilme { get; set; }
+    public string Nome { get; set; }
     public virtual ICollection<Filme> Filmes { get; set; }
 
-    public Genero()
+    public Genero(string nome)
     {
-        GeneroFilme = GeneroFilme.Trim();
+        Nome = nome.Trim();
     }
 }
 
