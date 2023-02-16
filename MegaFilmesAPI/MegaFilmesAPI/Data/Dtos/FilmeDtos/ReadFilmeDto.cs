@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MegaFilmesAPI.Data.Dtos.DiretorDtos;
+using System.ComponentModel.DataAnnotations;
 
 namespace MegaFilmesAPI.Data.Dtos.FilmeDtos;
 
@@ -14,7 +15,7 @@ public class ReadFilmeDto
     public int Ano { get; set; }
 
     [Required(ErrorMessage = "O diretor do filme é obrigatório")]
-    public string Diretor { get; set; }
+    public ReadDiretorDto Diretor { get; set; }
 
     [Required]
     public string Genero { get; set; }

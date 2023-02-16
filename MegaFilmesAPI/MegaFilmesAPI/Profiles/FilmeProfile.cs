@@ -9,7 +9,9 @@ namespace MegaFilmesAPI.Profiles
         public FilmeProfile() 
         {
             CreateMap<CreateFilmeDto, Filme>();
-            CreateMap<Filme, ReadFilmeDto>();
+            CreateMap<Filme, ReadFilmeDto>()
+                .ForMember(filmeDto => filmeDto.Diretor,
+                opt => opt.MapFrom(filme => filme.Diretor));
             CreateMap<UpdateFilmeDto, Filme>();
         }
     }
