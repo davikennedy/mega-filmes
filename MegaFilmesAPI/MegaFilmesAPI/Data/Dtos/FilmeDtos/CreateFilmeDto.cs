@@ -18,5 +18,5 @@ public class CreateFilmeDto
     //public string Diretor { get; set; }
 
     [Required(ErrorMessage = "O gênero do filme é obrigatório")]
-    public string Genero { get; set; }
+    public int GeneroId { get; set; }
 }

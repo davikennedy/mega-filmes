@@ -19,6 +19,8 @@ public class Filme
 
     [Required]
     public int GeneroId { get; set; }
+    [Required(ErrorMessage = "O gênero do filme é obrigatório")]
+    public virtual Genero Genero { get; set; }
 
     [Required]
     public int DiretorId { get; set; }

@@ -1,4 +1,5 @@
 ﻿using MegaFilmesAPI.Data.Dtos.DiretorDtos;
+using MegaFilmesAPI.Data.Dtos.GeneroDtos;
 using System.ComponentModel.DataAnnotations;
 
 namespace MegaFilmesAPI.Data.Dtos.FilmeDtos;
@@ -18,5 +19,5 @@ public class ReadFilmeDto
     public ReadDiretorDto Diretor { get; set; }
 
     [Required]
-    public string Genero { get; set; }
+    public ReadGeneroDto Genero { get; set; }
 }

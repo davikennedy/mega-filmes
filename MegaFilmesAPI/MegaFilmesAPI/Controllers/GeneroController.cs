@@ -4,6 +4,7 @@ using MegaFilmesAPI.Data;
 using MegaFilmesAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using MegaFilmesAPI.Data.Dtos.GeneroDtos;
+using MegaFilmesAPI.Data.Dtos.FilmeDtos;
 
 namespace MegaFilmesAPI.Controllers;
 
@@ -31,12 +32,10 @@ public class GeneroController :ControllerBase
       
     }
 
-   
-
     [HttpGet]
-    public IEnumerable<Genero> RecuperarGeneros([FromQuery] int skip = 0, [FromQuery] int take = 10)
+    public IEnumerable<ReadGeneroDto> RecuperarGeneros([FromQuery] int skip = 0, [FromQuery] int take = 10)
     {
-        return _context.Generos.Skip(skip).Take(take);
+        return _mapper.Map<List<ReadGeneroDto>>(_context.Generos.Skip(skip).Take(take).ToList());
     }
 
     [HttpGet("{id}")]
@@ -46,7 +45,7 @@ public class GeneroController :ControllerBase
 
         if (genero != null)
         {
-            ReadDiretorDto generoDto = _mapper.Map<ReadDiretorDto>(genero);
+            ReadGeneroDto generoDto = _mapper.Map<ReadGeneroDto>(genero);
             return Ok(generoDto);
         }
 
