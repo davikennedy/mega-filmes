@@ -57,6 +57,24 @@ public class FilmeController : ControllerBase
         return NotFound();
     }
 
+    [HttpGet("parametro/{param}")]
+    public IActionResult RecuperarFilmePorParametro(string param)
+    {
+        var filmes = _context.Filmes
+            .Where(filme =>
+                filme.Nome.ToLower().Contains(param.ToUpper()) ||
+                filme.Genero.Nome.ToLower().Contains(param.ToLower()) ||
+                filme.Diretor.Nome.ToLower().Contains(param.ToLower()))
+            .ToList();
+
+        if (filmes is null) 
+            return NotFound($"Nenhum filme com o parâmetro {param} foi encontrado.");
+
+        var filmesDto = filmes.ConvertAll(filme => _mapper.Map<ReadFilmeDto>(filme));
+
+        return Ok(filmes);
+    }
+
     [HttpPut ("{id}")]
     public IActionResult AtualizarFilme(int id, [FromBody] UpdateFilmeDto filmeDto)
     {
